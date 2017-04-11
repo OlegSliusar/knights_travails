@@ -31,3 +31,6 @@ You made it in 3 moves. Here's your path:
 [4, 3]
 
 ```
+---
+
+Assigned by [The Odin Project](http://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms).
