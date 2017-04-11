@@ -1,5 +1,5 @@
 def knight_moves(initial, target)
-  require_relative 'knight'
+  require_relative 'lib/knight.rb'
   knight = Knight.new
   path = knight.find_path(initial, target)
   output(path)
