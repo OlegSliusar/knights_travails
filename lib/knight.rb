@@ -7,8 +7,8 @@ class Knight
   end
 
   def build_graph_of_moves
-    8.times do |col|
-      8.times do |row|
+    8.times do |row|
+      8.times do |col|
         possible_moves = [[row - 2, col + 1],
                           [row - 1, col + 2],
                           [row + 1, col + 2],
