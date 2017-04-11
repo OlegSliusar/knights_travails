@@ -25,4 +25,21 @@ class Knight
     end
     @chessboard.board
   end
+
+  def find_path(initial, target)
+    @board_with_knight = @chessboard.calculate_distance(@board_with_knight, target)
+
+    path = []
+    path << initial
+
+    while @board_with_knight[path.last[0]][path.last[1]].distance != 0
+      @board_with_knight[path.last[0]][path.last[1]].neighbors.each do |v|
+        if @board_with_knight[v.first][v.last].distance < @board_with_knight[path.last[0]][path.last[1]].distance
+          path << v
+        end
+      end
+    end
+
+    path
+  end
 end
