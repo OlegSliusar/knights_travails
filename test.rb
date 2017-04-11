@@ -26,3 +26,28 @@ test_moves.each_with_index do |move, i|
     raise RuntimeError
   end
 end
+
+def parse_user_input(str)
+  initial = str.split(" ").first.split(',').map { |e| e.to_i }
+  target = str.split(" ").last.split(',').map { |e| e.to_i }
+
+  ary = [initial, target]
+end
+
+puts "Would you like to try it?(Y/n)"
+print "> "
+answer = gets.strip.downcase
+
+if answer == 'y'
+  puts "Ok, Enter your coordinates in format like '1,2 5,4'"
+  puts "Enter 'exit' to exit the program."
+
+  loop do
+    puts "Enter your coordinates:"
+    print "> "
+    answer = gets.strip
+    break if answer == 'exit'
+    answer = parse_user_input(answer)
+    knight_moves(answer[0], answer[1])
+  end
+end
