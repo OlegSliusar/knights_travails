@@ -1,13 +1,18 @@
 class Chessboard
   require_relative 'square'
   attr_accessor :board
+
   def initialize
     @board = []
-    8.times do |r|
-      @board[r] = []
-      8.times do |c|
-        @board[r] << Square.new(r,c)
+    8.times do |row|
+      @board[row] = []
+      8.times do |col|
+        @board[row] << Square.new(row,col)
       end
     end
+  end
+
+  def wrong_move?(move)
+    move.first < 0 || move.first >= 8 || move.last < 0 || move.last >= 8
   end
 end
